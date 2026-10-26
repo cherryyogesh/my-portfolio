@@ -10,6 +10,10 @@ import {
   CylinderCollider,
   RapierRigidBody,
 } from "@react-three/rapier";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const textureLoader = new THREE.TextureLoader();
 const imageUrls = [
@@ -128,27 +132,21 @@ const TechStack = () => {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-      const threshold = document
-        .getElementById("work")!
-        .getBoundingClientRect().top;
-      setIsActive(scrollY > threshold);
-    };
-    document.querySelectorAll(".header a").forEach((elem) => {
-      const element = elem as HTMLAnchorElement;
-      element.addEventListener("click", () => {
-        const interval = setInterval(() => {
-          handleScroll();
-        }, 10);
-        setTimeout(() => {
-          clearInterval(interval);
-        }, 1000);
-      });
+    // Refresh ScrollTrigger so that mounting TechStack updates all document offsets
+    ScrollTrigger.refresh();
+
+    const st = ScrollTrigger.create({
+      trigger: ".techstack",
+      start: "top 85%",
+      end: "bottom 15%",
+      onEnter: () => setIsActive(true),
+      onLeave: () => setIsActive(false),
+      onEnterBack: () => setIsActive(true),
+      onLeaveBack: () => setIsActive(false),
     });
-    window.addEventListener("scroll", handleScroll);
+
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      st.kill();
     };
   }, []);
   const materials = useMemo(() => {

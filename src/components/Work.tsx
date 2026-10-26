@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const projects = [
   {
@@ -39,38 +39,42 @@ const projects = [
 
 const Work = () => {
   useGSAP(() => {
-    let translateX: number = 0;
+    const section = document.querySelector(".work-section") as HTMLElement;
+    const flex = document.querySelector(".work-flex") as HTMLElement;
+    if (!section || !flex) return;
 
-    function setTranslateX() {
-      const box = document.getElementsByClassName("work-box");
-      const container = document.querySelector(".work-container");
-      if (!box.length || !container) return;
-      const rectLeft = container.getBoundingClientRect().left;
-      const rect = box[0].getBoundingClientRect();
-      const parentWidth = box[0].parentElement
-        ? box[0].parentElement.getBoundingClientRect().width
-        : window.innerWidth;
-      let padding: number =
-        parseInt(window.getComputedStyle(box[0]).padding) / 2 || 0;
-      translateX = rect.width * box.length - (rectLeft + parentWidth) + padding;
-    }
+    const getScrollAmount = () => {
+      const totalWidth = flex.scrollWidth;
+      const viewWidth = window.innerWidth;
+      return Math.max(0, totalWidth - viewWidth + 140);
+    };
 
-    setTranslateX();
-
-    let timeline = gsap.timeline({
+    const timeline = gsap.timeline({
       scrollTrigger: {
-        trigger: ".work-section",
+        trigger: section,
         start: "top top",
-        end: `+=${translateX > 0 ? translateX : 600}`,
-        scrub: true,
+        end: () => `+=${getScrollAmount()}`,
+        scrub: 1,
         pin: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
         id: "work",
       },
     });
 
-    timeline.to(".work-flex", {
-      x: -(translateX > 0 ? translateX : 0),
+    timeline.to(flex, {
+      x: () => -getScrollAmount(),
       ease: "none",
+    });
+
+    // Refresh ScrollTrigger once images load
+    const images = flex.querySelectorAll("img");
+    images.forEach((img) => {
+      if (!img.complete) {
+        img.addEventListener("load", () => {
+          ScrollTrigger.refresh();
+        });
+      }
     });
 
     return () => {
