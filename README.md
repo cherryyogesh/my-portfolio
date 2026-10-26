@@ -1,65 +1,70 @@
-# My Portfolio Website - Overview 🚀
+# G. Yogeswara Murthy — Personal Portfolio Website 🚀
 
-This repository contains the open-source version of my personal portfolio website.  
-Feel free to explore the code and use it for learning and inspiration.
+Welcome to the personal portfolio of **G. Yogeswara Murthy**, Web Developer and AI Intern at AAROHAAN AI Program.
 
----
-
-## ⚠️ Usage Notice
-
-This project is shared for learning purposes only.
-
-Please do NOT:
-- Clone or replicate the full website or design
-- Repost it with minor content changes
-- Use this project for commercial/client work
-- Create tutorials or content using this exact project
-
-If you use parts of the code, you must provide proper credit linking back to the original repository.
-
-Build your own version — don’t just copy.
-
-— Moncy Yohannan
+**Paderu / Visakhapatnam, Andhra Pradesh, India**  
+Email: [ganjaiyogesh579@gmail.com](mailto:ganjaiyogesh579@gmail.com) | Phone: [+91-6304349937](tel:+916304349937)
 
 ---
 
-## 🛠️ Instructions
+## 📌 About Me & Career Objective
 
-I have modified the GSAP Club plugins using trial versions.  
-⚠️ Note: Trial plugins cannot be used for production or hosting.
-
-For official GSAP Club plugins, refer here:  
-https://gsap.com/docs/v3/Installation/
+Motivated and enthusiastic fresher currently in a one-year Web Development and AI internship and training program (AAROHAAN AI Program). Strong foundation in complete web development—HTML, CSS, JavaScript, modern development tools, GitHub version control—and hands-on practice integrating AI capabilities into web-based projects. Actively seeking an entry-level opportunity to apply technical knowledge, learn from experienced professionals, and contribute to organizational growth.
 
 ---
 
-## ⚙️ Tech Stack
+## 💻 Technical Skills
 
-React • TypeScript • GSAP • Three.js • WebGL • HTML • CSS • JavaScript
-
----
-
-## 🎨 Assets Usage
-
-Some 3D assets included in this repository are free to use for learning purposes.
-
-However:
-
-- The original 3D avatar used on my live portfolio is NOT included in this repository
-- That avatar is a custom asset created over ~1 month
-- It is not open source and not available for reuse
-
-Any usage, extraction, or redistribution of that avatar from my live website is strictly prohibited.
+- **Web Fundamentals:** HTML5, CSS3, JavaScript (ES6+)
+- **Version Control:** Git, GitHub
+- **AI Integration:** Integrating AI tools and APIs into web projects (conceptual & practical)
+- **Tools & Practices:** VS Code, Browser Developer Tools, Responsive Design, Modern Dev Tools
+- **Soft Skills:** Problem-solving, Professional Communication, Teamwork & Collaboration, Self-learning
 
 ---
 
-![Protfolio-Preview](https://github.com/user-attachments/assets/3c4557e7-6392-4928-b8a9-7b2476ef4edd)
+## 💼 Training & Experience
+
+### Web Development & AI Intern | AAROHAAN AI Program
+**Paderu, India | July 2026 – Present**
+* Participating in a rigorous one-year training program focused on complete web development and practical AI integration.
+* Building responsive websites and pages using **HTML5, CSS3, and JavaScript**.
+* Implementing AI tools and capabilities into web-based projects through hands-on practice.
+* Maintaining and version-controlling practical projects on **GitHub** with regular commits and repository management.
 
 ---
 
-## 📄 License
+## 🚀 Featured Projects
 
-This project is licensed under the Personal Portfolio License (PPL) v1.0.
+1. **Personal Portfolio Website — HTML, CSS, JavaScript**
+   * Designed and developed a responsive personal website to showcase training progress, skills, and future projects.
+2. **Responsive Landing Page — HTML, CSS, JavaScript**
+   * Built a clean, modern landing page focusing on responsive design principles and cross-browser compatibility.
+3. **AI-assisted Web App — JavaScript, AI API Integration**
+   * Developed a web application integrating external AI APIs to deliver smart, interactive user features.
 
-See the LICENSE file for full details
+---
+
+## 🎓 Education
+
+- **Bachelor of Science (B.Sc.)** | Andhra University, Araku Valley (2019 – 2022)
+- **Intermediate (10+2)** | B.V.K Junior College, Visakhapatnam (2017 – 2019)
+- **Secondary School (Class 10)** | MODAMAMBA VIDYA KENDRAM School, Paderu (2016)
+
+---
+
+## 🛠️ Tech Stack & Development
+
+- **Framework:** React 18, Vite, TypeScript
+- **Visuals & 3D:** Three.js, React Three Fiber, Rapier Physics
+- **Animations:** GSAP, ScrollTrigger, SplitText
+- **Styling:** Modern CSS3, responsive design
+
+```bash
+# Run locally
+npm run dev
+
+# Build for production
+npm run build
+```
 
